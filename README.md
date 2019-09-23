@@ -88,13 +88,13 @@ Luego de definir nuestro usuario y sus requerimientos, comenzamos el proceso de 
  El paso siguiente corresponde al prototipado de baja definición, aquí comenzamos ideando e iterando sobre cómo debería verse la aplicación, y qué elementos debería contener para llegar al producto final.
  Luego de otorgado el desafío, comenzamos a idear la mejor forma de resolverlo, para eso hicimos los primeros bosquejos o wireframes del producto. Pensamos en poner boton para filtrar, y otro  para ordenar. Pero con el feedback de nuestro squak nos dimos cuenta que era poco practico y se veria muy recargada la aplicación. Finalmente decidimos hacer listas desplegables para las opciones de filtardo y ordenado.
 
-![Sketch inicial aquí](ImagenSketch/Sketch.jpg)
+![Sketch](img\Sketch.jpg)
   
 ## Planificación
 Realizamos una planificación al comienzo del proyecto con tableros en la pizarra. Utilizamos Trello para digitalizar nuestra planificación. 
 
 [Selecciona aqui](https://trello.com/b/rYe2a8ZX/pokemonego)
-
+ 
 
 #### FASE 3 Prototipo de alta fidelidad
 Prototipo en Figma

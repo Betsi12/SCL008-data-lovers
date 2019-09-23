@@ -8,19 +8,17 @@ body{
   background-attachment: fixed;
   background-position: center; 
   background-size: cover;
+  opacity: 0.9;
 }
 
 .jumbotron{
-  margin-left: 250px;
-  width: 750px;
-  height: 200px;
+ text-align: justify;
   background: #1D8696;
-  border-radius: 15px;
-  margin-top: 2%;
   opacity: 0.9;
-  color: white;
-  font-size: 20px;
-}
+  border-radius: 10px;
+  margin-top: 2rem;
+  width:400 px;
+  }
 
 .nav {
     margin-top: 1rem;
@@ -60,7 +58,6 @@ body{
     width: 310px;*/
      
   }
-
   .modal-content{
     height: 500px;
     width: 400px;

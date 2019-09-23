@@ -2,8 +2,8 @@ const pokeData = window.POKEMON.pokemon;
 const container = document.getElementById('root');// donde contendre mis cartas con pokemon
 const newData = (pokeData) => {
 	let result = '';
-   pokeData.forEach(element => { //element representa al objeto que esta dentro de la data
- container.innerHTML += `
+	pokeData.forEach(element => { //element representa al objeto que esta dentro de la data
+		container.innerHTML += `
 		 <div>
 			 <div class="card">
              <div class="box">
@@ -15,18 +15,18 @@ const newData = (pokeData) => {
 				 </div>				 
 			 </div>
 			 </div>
-		 </div>` 
-});
-return result;
+		 </div>`
+	});
+	return result;
 }
 //Filtrando
-document.getElementById('category').addEventListener('change',() => {
-let condition = document.getElementById('category').value;
-let filtered = window.filterData(pokeData, condition);
-//Limpiando div
-container.innerHTML = '';
-filtered.forEach(element => {
-container.innerHTML += `<div>
+document.getElementById('category').addEventListener('change', () => {
+	let condition = document.getElementById('category').value;
+	let filtered = window.filterData(pokeData, condition);
+	//Limpiando div
+	container.innerHTML = '';
+	filtered.forEach(element => {
+		container.innerHTML += `<div>
 		 <div class="card">
 		 <div class="box">
 		 <h2>${element.name}</h2>
@@ -66,18 +66,17 @@ container.innerHTML += `<div>
       </div>      
     </div>
   </div>
-</div>` 
+</div>`
+	})
 })
-})
-const opcOrder=document.getElementById('sort');
-opcOrder.addEventListener('change',() => {
-let opcNameAz = document.getElementById('sort').value;
-let arrOrderAz =window.sortData(pokeData,'name',opcNameAz);
-			
-		container.innerHTML = '';
+const opcOrder = document.getElementById('sort');
+opcOrder.addEventListener('change', () => {
+	let opcNameAz = document.getElementById('sort').value;
+	let arrOrderAz = window.sortData(pokeData, 'name', opcNameAz);
 
-		arrOrderAz.forEach(element => {
-			container.innerHTML += `<div>
+	container.innerHTML = '';
+	arrOrderAz.forEach(element => {
+		container.innerHTML += `<div>
 		<div class="card">
 		<div class="box">
 		<h2>${element.name}</h2>
@@ -89,10 +88,38 @@ let arrOrderAz =window.sortData(pokeData,'name',opcNameAz);
 	</div>
 	</div>
 </div>`
-		})
 	})
-	
+})
+const opcOrderNum = document.getElementById('sort');
+opcOrderNum.addEventListener('change', () => {
+	stats.innerHTML = "";
+	let opcNumAscend= document.getElementById('sort').value;
+	let arrOrderNum = window.orderNum(pokeData, 'num', opcNumAscend);
 
-	
+	container.innerHTML = '';
+	arrOrderNum.forEach(element => {
+		container.innerHTML += `<div>
+		<div class="card">
+		<div class="box">
+		<h2>${element.name}</h2>
+			<div class="img">
+				<img src="${element.img}" alt="${element.name}">
+				<p>Número de pokémon:${element.num}</p> 
+				<p>Tipo:${element.type}</p>
+		</div>				 
+	</div>
+	</div>
+</div>`
+	})
+})
 
-	window.onload = newData(pokeData);
+let opcCalc = document.getElementById("category");
+opcCalc.addEventListener("click", () => {
+	let condition = opcCalc.value;
+	let result2 = window.computeStats(pokeData, condition);
+	stats.innerHTML = "";
+	stats.innerHTML += `<h4>El total de pokemones de este  tipo es: ${result2}</h4>`
+})
+
+
+window.onload = newData(pokeData);

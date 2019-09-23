@@ -104,3 +104,42 @@ describe('filterData', () => {
 
 });
 
+describe('computeStats', () => {
+  const dataStats = [
+    {
+      name: 'Squirtle',
+      type: 'Water'
+    },
+    {
+      name: 'Wartortle',
+      type: 'Water'
+    },
+    {
+      name: 'Blastoise',
+      type: 'Water'
+    },
+
+    {
+      name: 'Abra',
+      type: 'Psychic'
+    },
+
+    {
+      name: 'Charizard',
+      type: 'Fire'
+    },
+    {
+      name: 'Vulpix',
+      type: 'Fire'
+    },
+    {
+      name: 'Zubat',
+      type: 'Grass'
+    }
+  ]
+  it('Debería mostrar 3 Pokemons tipo agua, 2 de fuego, 1 psyquico y 1 de planta', () => {
+    assert.deepEqual(window.data.computeStats(dataStats),
+      [{ "Fire": 2 }, { "Psychic": 1 }, { "Grass": 1 }, { "Water": 3 }]);
+
+  });
+})
